@@ -17,9 +17,6 @@ class CloudKitManager {
         ckPrivateDB.save(record, completionHandler: completion)
     }
     
-    // Update a Contact
-    
-    
     // Fetch all Contacts
     func performQueryWith(recordType: String,
                           sortedBy: String?,
@@ -34,4 +31,27 @@ class CloudKitManager {
                             completionHandler: completion)
     }
     
+    func update(record: CKRecord, completion: @escaping (Bool) -> Void) {
+        
+        let operation = CKModifyRecordsOperation(recordsToSave: [record], recordIDsToDelete: nil)
+        operation.savePolicy = .allKeys
+        operation.modifyRecordsCompletionBlock = { (_, _, error) in
+            if let error = error {
+                print("Error \(#file) \(#function): \(error.localizedDescription)")
+                completion(false)
+                return
+            } else {
+                completion(true)
+                return
+            }
+        }
+
+        ckPrivateDB.add(operation)
+    }
+    
 }
+
+
+
+
+

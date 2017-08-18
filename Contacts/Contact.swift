@@ -10,7 +10,7 @@ import Foundation
 import CloudKit
 
 class Contact {
-    let name: String
+    var name: String
     var phoneNumber: String?
     var email: String?
     var recordID: CKRecordID?
@@ -37,10 +37,29 @@ class Contact {
         }
     }
     
+    func update(name: String, phoneNumber: String?, email: String?) {
+        self.name = name
+        self.phoneNumber = phoneNumber
+        self.email = email
+    }
+    
     // FIXME: - Will this work with optional values here??
-    var asCKRecord: CKRecord {
+    var asNewCKRecord: CKRecord {
         let record = CKRecord(recordType: Constants.contactRecordType)
         self.recordID = record.recordID
+        
+        record[Constants.contactName] = name as CKRecordValue
+        record[Constants.contactPhoneNumber] = phoneNumber as CKRecordValue?
+        record[Constants.contactEmail] = email as CKRecordValue?
+        
+        return record
+    }
+    
+    var asExistingCKRecord: CKRecord? {
+        guard let recordID = self.recordID else { return nil }
+        
+        let record = CKRecord(recordType: Constants.contactRecordType,
+                              recordID: recordID)
         
         record[Constants.contactName] = name as CKRecordValue
         record[Constants.contactPhoneNumber] = phoneNumber as CKRecordValue?

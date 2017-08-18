@@ -26,6 +26,7 @@ class ContactsMainTableViewController: UITableViewController {
     }
 }
 
+// Table View Data Source
 extension ContactsMainTableViewController {
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return ContactController.shared.contacts.count
@@ -39,3 +40,23 @@ extension ContactsMainTableViewController {
         return cell
     }
 }
+
+// Navigation
+extension ContactsMainTableViewController {
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "EditContact" {
+            guard let nextVC = segue.destination as? UINavigationController,
+                let detailVC = nextVC.topViewController as? ContactsDetailTableViewController,
+                let indexPath = tableView.indexPathForSelectedRow else { return }
+            
+            let selectedContact = ContactController.shared.contacts[indexPath.row]
+            detailVC.contact = selectedContact
+        }
+    }
+}
+
+
+
+
+
+
