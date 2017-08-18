@@ -8,20 +8,33 @@
 
 /* Begin PBXBuildFile section */
 		D8B3CEA41F473B0A003F94FA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8B3CEA31F473B0A003F94FA /* AppDelegate.swift */; };
-		D8B3CEA61F473B0A003F94FA /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8B3CEA51F473B0A003F94FA /* ViewController.swift */; };
 		D8B3CEA91F473B0A003F94FA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D8B3CEA71F473B0A003F94FA /* Main.storyboard */; };
 		D8B3CEAB1F473B0A003F94FA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D8B3CEAA1F473B0A003F94FA /* Assets.xcassets */; };
 		D8B3CEAE1F473B0A003F94FA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D8B3CEAC1F473B0A003F94FA /* LaunchScreen.storyboard */; };
+		D8B3CEB81F473B18003F94FA /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D8B3CEB71F473B18003F94FA /* CloudKit.framework */; };
+		D8B3CEBB1F473C90003F94FA /* ContactsMainTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8B3CEBA1F473C90003F94FA /* ContactsMainTableViewController.swift */; };
+		D8B3CEBD1F473C9B003F94FA /* ContactsDetailTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8B3CEBC1F473C9B003F94FA /* ContactsDetailTableViewController.swift */; };
+		D8B3CEC01F473E68003F94FA /* Contact.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8B3CEBF1F473E68003F94FA /* Contact.swift */; };
+		D8B3CEC21F473E70003F94FA /* ContactController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8B3CEC11F473E70003F94FA /* ContactController.swift */; };
+		D8B3CEC41F473E78003F94FA /* CloudKitManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8B3CEC31F473E78003F94FA /* CloudKitManager.swift */; };
+		D8B3CEC61F473FEB003F94FA /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8B3CEC51F473FEB003F94FA /* Constants.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		D8B3CEA01F473B0A003F94FA /* Contacts.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Contacts.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D8B3CEA31F473B0A003F94FA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		D8B3CEA51F473B0A003F94FA /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		D8B3CEA81F473B0A003F94FA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		D8B3CEAA1F473B0A003F94FA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D8B3CEAD1F473B0A003F94FA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D8B3CEAF1F473B0A003F94FA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D8B3CEB51F473B15003F94FA /* Contacts.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Contacts.entitlements; sourceTree = "<group>"; };
+		D8B3CEB71F473B18003F94FA /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
+		D8B3CEBA1F473C90003F94FA /* ContactsMainTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactsMainTableViewController.swift; sourceTree = "<group>"; };
+		D8B3CEBC1F473C9B003F94FA /* ContactsDetailTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactsDetailTableViewController.swift; sourceTree = "<group>"; };
+		D8B3CEBF1F473E68003F94FA /* Contact.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Contact.swift; sourceTree = "<group>"; };
+		D8B3CEC11F473E70003F94FA /* ContactController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactController.swift; sourceTree = "<group>"; };
+		D8B3CEC31F473E78003F94FA /* CloudKitManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CloudKitManager.swift; sourceTree = "<group>"; };
+		D8B3CEC51F473FEB003F94FA /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,6 +42,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D8B3CEB81F473B18003F94FA /* CloudKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -40,6 +54,7 @@
 			children = (
 				D8B3CEA21F473B0A003F94FA /* Contacts */,
 				D8B3CEA11F473B0A003F94FA /* Products */,
+				D8B3CEB61F473B18003F94FA /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -55,13 +70,51 @@
 			isa = PBXGroup;
 			children = (
 				D8B3CEA31F473B0A003F94FA /* AppDelegate.swift */,
-				D8B3CEA51F473B0A003F94FA /* ViewController.swift */,
-				D8B3CEA71F473B0A003F94FA /* Main.storyboard */,
+				D8B3CEC71F4747D1003F94FA /* Model */,
+				D8B3CEBE1F473C9F003F94FA /* UI */,
+				D8B3CEB91F473B3F003F94FA /* Resources */,
+			);
+			path = Contacts;
+			sourceTree = "<group>";
+		};
+		D8B3CEB61F473B18003F94FA /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				D8B3CEB71F473B18003F94FA /* CloudKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		D8B3CEB91F473B3F003F94FA /* Resources */ = {
+			isa = PBXGroup;
+			children = (
 				D8B3CEAA1F473B0A003F94FA /* Assets.xcassets */,
 				D8B3CEAC1F473B0A003F94FA /* LaunchScreen.storyboard */,
 				D8B3CEAF1F473B0A003F94FA /* Info.plist */,
+				D8B3CEB51F473B15003F94FA /* Contacts.entitlements */,
 			);
-			path = Contacts;
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		D8B3CEBE1F473C9F003F94FA /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				D8B3CEA71F473B0A003F94FA /* Main.storyboard */,
+				D8B3CEBA1F473C90003F94FA /* ContactsMainTableViewController.swift */,
+				D8B3CEBC1F473C9B003F94FA /* ContactsDetailTableViewController.swift */,
+			);
+			name = UI;
+			sourceTree = "<group>";
+		};
+		D8B3CEC71F4747D1003F94FA /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				D8B3CEC51F473FEB003F94FA /* Constants.swift */,
+				D8B3CEBF1F473E68003F94FA /* Contact.swift */,
+				D8B3CEC11F473E70003F94FA /* ContactController.swift */,
+				D8B3CEC31F473E78003F94FA /* CloudKitManager.swift */,
+			);
+			name = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -98,6 +151,14 @@
 						CreatedOnToolsVersion = 8.3.3;
 						DevelopmentTeam = 53BVAZ8K9G;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.Push = {
+								enabled = 1;
+							};
+							com.apple.iCloud = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -137,8 +198,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D8B3CEA61F473B0A003F94FA /* ViewController.swift in Sources */,
+				D8B3CEC01F473E68003F94FA /* Contact.swift in Sources */,
+				D8B3CEC21F473E70003F94FA /* ContactController.swift in Sources */,
+				D8B3CEC41F473E78003F94FA /* CloudKitManager.swift in Sources */,
+				D8B3CEBD1F473C9B003F94FA /* ContactsDetailTableViewController.swift in Sources */,
+				D8B3CEC61F473FEB003F94FA /* Constants.swift in Sources */,
 				D8B3CEA41F473B0A003F94FA /* AppDelegate.swift in Sources */,
+				D8B3CEBB1F473C90003F94FA /* ContactsMainTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -261,6 +327,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Contacts/Contacts.entitlements;
 				DEVELOPMENT_TEAM = 53BVAZ8K9G;
 				INFOPLIST_FILE = Contacts/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -274,6 +341,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Contacts/Contacts.entitlements;
 				DEVELOPMENT_TEAM = 53BVAZ8K9G;
 				INFOPLIST_FILE = Contacts/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
