@@ -26,13 +26,13 @@ class ContactController {
 }
 
 extension ContactController {
-    func saveContact(name: String,
+    func saveNewContact(name: String,
                      phoneNumber: String?,
                      email: String?,
                      completion: @escaping (Bool) -> Void) {
         let contact = Contact(name: name, phoneNumber: phoneNumber, email: email)
         
-        ckManager.save(record: contact.asCKRecord) { (_, error) in
+        ckManager.save(record: contact.asNewCKRecord) { (_, error) in
             if let error = error {
                 print("Error \(#file) \(#function): \(error.localizedDescription)")
                 completion(false)
@@ -58,4 +58,18 @@ extension ContactController {
         }
     }
     
+    func updateContact(contact: Contact,
+                       withNewName name: String,
+                       withNewPhoneNumber phoneNumber: String?,
+                       withNewEmail email: String?,
+                       completion: @escaping (Bool) -> Void) {
+        
+        guard let ckRecordToUpdate = contact.asExistingCKRecord else { return }
+        
+        contact.update(name: name, phoneNumber: phoneNumber, email: email)
+        
+        ckManager.update(record: ckRecordToUpdate) { (success) in
+            completion(success)
+        }
+    }
 }
