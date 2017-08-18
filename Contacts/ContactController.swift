@@ -64,11 +64,13 @@ extension ContactController {
                        withNewEmail email: String?,
                        completion: @escaping (Bool) -> Void) {
         
-        guard let ckRecordToUpdate = contact.asExistingCKRecord else { return }
+        guard contact.recordID != nil else { return }
         
         contact.update(name: name, phoneNumber: phoneNumber, email: email)
         
-        ckManager.update(record: ckRecordToUpdate) { (success) in
+        guard let contactAsCKRecord = contact.asExistingCKRecord else { return }
+        
+        ckManager.update(record: contactAsCKRecord) { (success) in
             completion(success)
         }
     }
